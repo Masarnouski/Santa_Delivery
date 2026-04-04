@@ -24,7 +24,7 @@ public class HouseMover : MonoBehaviour
 
     void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        transform.position += Vector3.left * speed * WorldSpeed.Multiplier * Time.deltaTime;
 
         if (transform.position.x < destroyX)
         {
@@ -37,8 +37,8 @@ public class HouseMover : MonoBehaviour
     public void SetAsTarget(Color color)
     {
         IsTarget = true;
-        if (sr != null)
-            sr.color = color;
+        GlowEffect glow = gameObject.GetComponent<GlowEffect>() ?? gameObject.AddComponent<GlowEffect>();
+        glow.SetGlow(color);
     }
 
     public void ClearTarget()
