@@ -875,7 +875,6 @@ MonoBehaviour:
   giftPrefab: {fileID: 6005487888603687739, guid: bad410b04ebffb146bfda71aa2849553, type: 3}
   giftGravity: 15
   giftDriftX: -1.5
-  holdBoostThreshold: 0.4
 --- !u!212 &650749386
 SpriteRenderer:
   serializedVersion: 2
