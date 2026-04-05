@@ -44,7 +44,7 @@ public class BackgroundScroller : MonoBehaviour
 
     void Update()
     {
-        float step = scrollSpeed * WorldSpeed.Multiplier * Time.deltaTime;
+        float step = scrollSpeed * Time.deltaTime;
 
         for (int i = 0; i < count; i++)
             tiles[i].transform.position += Vector3.left * step;

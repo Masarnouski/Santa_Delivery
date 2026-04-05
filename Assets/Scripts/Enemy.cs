@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
     {
         if (dead) return;
         Vector3 p = transform.position;
-        p.x -= speed * WorldSpeed.Multiplier * Time.deltaTime;
+        p.x -= speed * Time.deltaTime;
         p.y = startY + Mathf.Sin(Time.time * frequency + timeOffset) * amplitude;
         transform.position = p;
         if (p.x < killX) { dead = true; gameObject.SetActive(false); return; }
