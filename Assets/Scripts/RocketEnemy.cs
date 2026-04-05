@@ -6,7 +6,7 @@ public class RocketEnemy : MonoBehaviour {
 void Start() { transform.rotation = Quaternion.Euler(0f, 0f, 90f); Camera cam = Camera.main; killX = cam.transform.position.x - cam.orthographicSize * cam.aspect - 4f; santa = FindObjectOfType<SantaController>(); col = GetComponent<CircleCollider2D>(); }
     void Update() {
         if (dead) return;
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        transform.position += Vector3.left * speed * WorldSpeed.Multiplier * Time.deltaTime;
         if (transform.position.x < killX) { gameObject.SetActive(false); return; }
         if (santa == null) return;
         float r = col != null ? col.radius * transform.localScale.x : 0.3f;
